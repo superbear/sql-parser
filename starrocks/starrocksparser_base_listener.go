@@ -1160,6 +1160,12 @@ func (s *BaseStarRocksParserListener) EnterDropPersistentIndexClause(ctx *DropPe
 func (s *BaseStarRocksParserListener) ExitDropPersistentIndexClause(ctx *DropPersistentIndexClauseContext) {
 }
 
+// EnterSplitTabletClause is called when production splitTabletClause is entered.
+func (s *BaseStarRocksParserListener) EnterSplitTabletClause(ctx *SplitTabletClauseContext) {}
+
+// ExitSplitTabletClause is called when production splitTabletClause is exited.
+func (s *BaseStarRocksParserListener) ExitSplitTabletClause(ctx *SplitTabletClauseContext) {}
+
 // EnterAddPartitionClause is called when production addPartitionClause is entered.
 func (s *BaseStarRocksParserListener) EnterAddPartitionClause(ctx *AddPartitionClauseContext) {}
 
@@ -2306,6 +2312,30 @@ func (s *BaseStarRocksParserListener) EnterShowBackendBlackListStatement(ctx *Sh
 
 // ExitShowBackendBlackListStatement is called when production showBackendBlackListStatement is exited.
 func (s *BaseStarRocksParserListener) ExitShowBackendBlackListStatement(ctx *ShowBackendBlackListStatementContext) {
+}
+
+// EnterAddComputeNodeBlackListStatement is called when production addComputeNodeBlackListStatement is entered.
+func (s *BaseStarRocksParserListener) EnterAddComputeNodeBlackListStatement(ctx *AddComputeNodeBlackListStatementContext) {
+}
+
+// ExitAddComputeNodeBlackListStatement is called when production addComputeNodeBlackListStatement is exited.
+func (s *BaseStarRocksParserListener) ExitAddComputeNodeBlackListStatement(ctx *AddComputeNodeBlackListStatementContext) {
+}
+
+// EnterDelComputeNodeBlackListStatement is called when production delComputeNodeBlackListStatement is entered.
+func (s *BaseStarRocksParserListener) EnterDelComputeNodeBlackListStatement(ctx *DelComputeNodeBlackListStatementContext) {
+}
+
+// ExitDelComputeNodeBlackListStatement is called when production delComputeNodeBlackListStatement is exited.
+func (s *BaseStarRocksParserListener) ExitDelComputeNodeBlackListStatement(ctx *DelComputeNodeBlackListStatementContext) {
+}
+
+// EnterShowComputeNodeBlackListStatement is called when production showComputeNodeBlackListStatement is entered.
+func (s *BaseStarRocksParserListener) EnterShowComputeNodeBlackListStatement(ctx *ShowComputeNodeBlackListStatementContext) {
+}
+
+// ExitShowComputeNodeBlackListStatement is called when production showComputeNodeBlackListStatement is exited.
+func (s *BaseStarRocksParserListener) ExitShowComputeNodeBlackListStatement(ctx *ShowComputeNodeBlackListStatementContext) {
 }
 
 // EnterDataCacheTarget is called when production dataCacheTarget is entered.

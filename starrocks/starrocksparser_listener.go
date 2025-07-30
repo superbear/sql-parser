@@ -514,6 +514,9 @@ type StarRocksParserListener interface {
 	// EnterDropPersistentIndexClause is called when entering the dropPersistentIndexClause production.
 	EnterDropPersistentIndexClause(c *DropPersistentIndexClauseContext)
 
+	// EnterSplitTabletClause is called when entering the splitTabletClause production.
+	EnterSplitTabletClause(c *SplitTabletClauseContext)
+
 	// EnterAddPartitionClause is called when entering the addPartitionClause production.
 	EnterAddPartitionClause(c *AddPartitionClauseContext)
 
@@ -1017,6 +1020,15 @@ type StarRocksParserListener interface {
 
 	// EnterShowBackendBlackListStatement is called when entering the showBackendBlackListStatement production.
 	EnterShowBackendBlackListStatement(c *ShowBackendBlackListStatementContext)
+
+	// EnterAddComputeNodeBlackListStatement is called when entering the addComputeNodeBlackListStatement production.
+	EnterAddComputeNodeBlackListStatement(c *AddComputeNodeBlackListStatementContext)
+
+	// EnterDelComputeNodeBlackListStatement is called when entering the delComputeNodeBlackListStatement production.
+	EnterDelComputeNodeBlackListStatement(c *DelComputeNodeBlackListStatementContext)
+
+	// EnterShowComputeNodeBlackListStatement is called when entering the showComputeNodeBlackListStatement production.
+	EnterShowComputeNodeBlackListStatement(c *ShowComputeNodeBlackListStatementContext)
 
 	// EnterDataCacheTarget is called when entering the dataCacheTarget production.
 	EnterDataCacheTarget(c *DataCacheTargetContext)
@@ -2356,6 +2368,9 @@ type StarRocksParserListener interface {
 	// ExitDropPersistentIndexClause is called when exiting the dropPersistentIndexClause production.
 	ExitDropPersistentIndexClause(c *DropPersistentIndexClauseContext)
 
+	// ExitSplitTabletClause is called when exiting the splitTabletClause production.
+	ExitSplitTabletClause(c *SplitTabletClauseContext)
+
 	// ExitAddPartitionClause is called when exiting the addPartitionClause production.
 	ExitAddPartitionClause(c *AddPartitionClauseContext)
 
@@ -2859,6 +2874,15 @@ type StarRocksParserListener interface {
 
 	// ExitShowBackendBlackListStatement is called when exiting the showBackendBlackListStatement production.
 	ExitShowBackendBlackListStatement(c *ShowBackendBlackListStatementContext)
+
+	// ExitAddComputeNodeBlackListStatement is called when exiting the addComputeNodeBlackListStatement production.
+	ExitAddComputeNodeBlackListStatement(c *AddComputeNodeBlackListStatementContext)
+
+	// ExitDelComputeNodeBlackListStatement is called when exiting the delComputeNodeBlackListStatement production.
+	ExitDelComputeNodeBlackListStatement(c *DelComputeNodeBlackListStatementContext)
+
+	// ExitShowComputeNodeBlackListStatement is called when exiting the showComputeNodeBlackListStatement production.
+	ExitShowComputeNodeBlackListStatement(c *ShowComputeNodeBlackListStatementContext)
 
 	// ExitDataCacheTarget is called when exiting the dataCacheTarget production.
 	ExitDataCacheTarget(c *DataCacheTargetContext)

@@ -683,6 +683,10 @@ func (v *BaseStarRocksParserVisitor) VisitDropPersistentIndexClause(ctx *DropPer
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseStarRocksParserVisitor) VisitSplitTabletClause(ctx *SplitTabletClauseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseStarRocksParserVisitor) VisitAddPartitionClause(ctx *AddPartitionClauseContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -1352,6 +1356,18 @@ func (v *BaseStarRocksParserVisitor) VisitDelBackendBlackListStatement(ctx *DelB
 }
 
 func (v *BaseStarRocksParserVisitor) VisitShowBackendBlackListStatement(ctx *ShowBackendBlackListStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseStarRocksParserVisitor) VisitAddComputeNodeBlackListStatement(ctx *AddComputeNodeBlackListStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseStarRocksParserVisitor) VisitDelComputeNodeBlackListStatement(ctx *DelComputeNodeBlackListStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseStarRocksParserVisitor) VisitShowComputeNodeBlackListStatement(ctx *ShowComputeNodeBlackListStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

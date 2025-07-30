@@ -261,6 +261,11 @@ statement
     | delBackendBlackListStatement
     | showBackendBlackListStatement
 
+    // Compute Node BlackList
+    | addComputeNodeBlackListStatement
+    | delComputeNodeBlackListStatement
+    | showComputeNodeBlackListStatement
+
     // Data Cache management statement
     | createDataCacheRuleStatement
     | showDataCacheRulesStatement
@@ -959,6 +964,7 @@ alterClause
     | dropTagClause
     | tableOperationClause
     | dropPersistentIndexClause
+    | splitTabletClause
 
     //Alter partition clause
     | addPartitionClause
@@ -1200,6 +1206,12 @@ dropPersistentIndexClause
     : DROP PERSISTENT INDEX ON TABLETS integer_list
     ;
 
+splitTabletClause
+    : SPLIT
+      (((TABLET | TABLETS) partitionNames?) | tabletList)
+      properties?
+    ;
+
 // ---------Alter partition clause---------
 
 addPartitionClause
@@ -1406,6 +1418,7 @@ showHistogramMetaStatement
 
 killAnalyzeStatement
     : KILL ANALYZE INTEGER_VALUE
+    | KILL ALL PENDING ANALYZE
     ;
 
 // ----------------------------------------- Analyze Profile Statement -------------------------------------------------
@@ -1965,6 +1978,20 @@ delBackendBlackListStatement
 
 showBackendBlackListStatement
     : SHOW BACKEND BLACKLIST
+    ;
+
+// ------------------------------------ Compute Node BlackList Statement ---------------------------------------------------
+
+addComputeNodeBlackListStatement
+    : ADD COMPUTE NODE BLACKLIST INTEGER_VALUE (',' INTEGER_VALUE)*
+    ;
+
+delComputeNodeBlackListStatement
+    : DELETE COMPUTE NODE BLACKLIST INTEGER_VALUE (',' INTEGER_VALUE)*
+    ;
+
+showComputeNodeBlackListStatement
+    : SHOW COMPUTE NODE BLACKLIST
     ;
 
 // -------------------------------------- DataCache Management Statement --------------------------------------------

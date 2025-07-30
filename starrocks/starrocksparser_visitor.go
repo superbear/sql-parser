@@ -514,6 +514,9 @@ type StarRocksParserVisitor interface {
 	// Visit a parse tree produced by StarRocksParser#dropPersistentIndexClause.
 	VisitDropPersistentIndexClause(ctx *DropPersistentIndexClauseContext) interface{}
 
+	// Visit a parse tree produced by StarRocksParser#splitTabletClause.
+	VisitSplitTabletClause(ctx *SplitTabletClauseContext) interface{}
+
 	// Visit a parse tree produced by StarRocksParser#addPartitionClause.
 	VisitAddPartitionClause(ctx *AddPartitionClauseContext) interface{}
 
@@ -1017,6 +1020,15 @@ type StarRocksParserVisitor interface {
 
 	// Visit a parse tree produced by StarRocksParser#showBackendBlackListStatement.
 	VisitShowBackendBlackListStatement(ctx *ShowBackendBlackListStatementContext) interface{}
+
+	// Visit a parse tree produced by StarRocksParser#addComputeNodeBlackListStatement.
+	VisitAddComputeNodeBlackListStatement(ctx *AddComputeNodeBlackListStatementContext) interface{}
+
+	// Visit a parse tree produced by StarRocksParser#delComputeNodeBlackListStatement.
+	VisitDelComputeNodeBlackListStatement(ctx *DelComputeNodeBlackListStatementContext) interface{}
+
+	// Visit a parse tree produced by StarRocksParser#showComputeNodeBlackListStatement.
+	VisitShowComputeNodeBlackListStatement(ctx *ShowComputeNodeBlackListStatementContext) interface{}
 
 	// Visit a parse tree produced by StarRocksParser#dataCacheTarget.
 	VisitDataCacheTarget(ctx *DataCacheTargetContext) interface{}
