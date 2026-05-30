@@ -2,9 +2,9 @@
 https://github.com/antlr/antlr4/blob/master/doc/go-target.md
 
 #### StarRocks ANTLR4 Grammar
-https://github.com/StarRocks/starrocks/blob/main/fe/fe-core/src/main/java/com/starrocks/sql/parser/StarRocks.g4
+https://github.com/StarRocks/starrocks/blob/main/fe/fe-grammar/src/main/antlr/com/starrocks/grammar/StarRocks.g4
 
-https://github.com/StarRocks/starrocks/blob/main/fe/fe-core/src/main/java/com/starrocks/sql/parser/StarRocksLex.g4
+https://github.com/StarRocks/starrocks/blob/main/fe/fe-grammar/src/main/antlr/com/starrocks/grammar/StarRocksLex.g4
 
 #### Gen StarRocks SQL Parser
 ```sh
